@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <div class="container-xl">
+    {{ .Content }}
+    {{ with .Params.cards }}
+      <div class="grid grid-md-{{ . | len }}">
+        {{ range . }}
+          <div class="card card--primary">
+            <h2>{{ .title }}</h2>
+            {{ .content | $.Page.RenderString (dict "display" "block") }}
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

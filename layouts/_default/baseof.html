@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.Title }}</title>
+    {{ with resources.Get "scss/main.scss" }}
+      {{ $css := . | toCSS (dict "transpiler" "libsass" "targetPath" "css/main.css") }}
+      {{ if hugo.IsProduction }}
+        {{ $css = $css | minify | fingerprint }}
+      {{ end }}
+      <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ end }}
+  </head>
+  <body>
+    <main class="main">
+      {{ block "main" . }}
+      {{ end }}
+    </main>
+  </body>
+</html>

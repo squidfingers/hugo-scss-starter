@@ -1,0 +1,24 @@
+@mixin make-stack($spacer) {
+  & > * {
+    margin-bottom: 0;
+  }
+  & > * + * {
+    margin-top: spacer($spacer);
+  }
+}
+@mixin make-stack-recursive($spacer) {
+  & * {
+    margin-bottom: 0;
+  }
+  & * + * {
+    margin-top: spacer($spacer);
+  }
+}
+@each $key in map-keys($spacers) {
+  .stack-#{$key} {
+    @include make-stack($key);
+  }
+  .stack-#{$key}-recursive {
+    @include make-stack-recursive($key);
+  }
+}

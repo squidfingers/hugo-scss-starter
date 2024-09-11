@@ -1,0 +1,17 @@
+.card {
+  @include make-stack(3);
+  padding: spacer(3);
+  box-shadow: elevation(1);
+  border-radius: $border-radius;
+  border: solid 2px $border-color;
+
+  // @options
+
+  @each $state, $colors in $state-colors {
+    &.card--#{$state} {
+      color: map-get($colors, "text");
+      background-color: map-get($colors, "background");
+      border-color: map-get($colors, "border");
+    }
+  }
+}

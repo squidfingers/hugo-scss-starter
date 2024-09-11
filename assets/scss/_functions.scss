@@ -1,0 +1,42 @@
+// Return deeply nested values from a map
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// Return a state color value
+@function state-color($state, $name) {
+  @return map-deep-get($state-colors, $state, $name);
+}
+
+// Mix a color with white
+@function tint-color($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Mix a color with black
+@function shade-color($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// Return a spacer value
+@function spacer($key) {
+  @return map-get($spacers, $key);
+}
+
+// Return an elevation value
+@function elevation($key) {
+  @return map-get($elevation, $key);
+}
+
+// Return a container breakpoint value
+@function container-breakpoint($breakpoint) {
+  @return map-get($container-breakpoints, $breakpoint);
+}
+
+// Return a container max-width value
+@function container-max-width($breakpoint) {
+  @return map-get($container-max-widths, $breakpoint);
+}
