@@ -5,8 +5,16 @@
       <div class="grid grid-md-{{ . | len }}">
         {{ range . }}
           <div class="card card--primary">
-            <h2>{{ .title }}</h2>
-            {{ .content | $.Page.RenderString (dict "display" "block") }}
+            <div class="card__body">
+              <div class="card__header">
+                <h2>
+                  {{ .title }}
+                </h2>
+              </div>
+              <div class="card__content">
+                {{ .content | $.Page.RenderString (dict "display" "block") }}
+              </div>
+            </div>
           </div>
         {{ end }}
       </div>

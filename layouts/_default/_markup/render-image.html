@@ -1,0 +1,15 @@
+{{ $attributes := merge .Attributes (dict "alt" .Text "src" .Destination) -}}
+{{ $attr := "" }}
+{{ range $k, $v := $attributes }}
+  {{ if $v }}
+    {{ $attr = printf "%s %s=%q" $attr $k $v }}
+  {{ end }}
+{{ end }}
+{{ if .IsBlock }}
+  <figure>
+    <img{{ $attr | safeHTMLAttr }}>
+    {{ with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+{{ else }}
+  <img{{ $attr | safeHTMLAttr }}{{ with .Title }} title="{{ . }}"{{ end }}>
+{{ end }}

@@ -25,6 +25,7 @@ $font-size-h6: 16px;
 // Colors
 
 $white: rgb(255, 255, 255);
+$gray: rgb(128, 128, 128);
 $dark: rgb(34, 34, 34);
 
 $primary: rgb(13, 110, 253);
@@ -91,15 +92,23 @@ $elevation: (
   3: 0 16px 24px 0 rgba(0, 0, 0, 0.1),
 );
 
-// Container
+// Layout
 
-$container-breakpoints: (
+$breakpoint-min-widths: (
   xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
   xxl: 1400px,
+);
+
+$breakpoint-max-widths: (
+  xs: 575px,
+  sm: 767px,
+  md: 991px,
+  lg: 1199px,
+  xl: 1399px,
 );
 
 $container-max-widths: (

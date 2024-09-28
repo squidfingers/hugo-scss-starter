@@ -4,15 +4,19 @@
 // Values for colors, fonts, spacing, etc
 @import "variables";
 
+// Mix-ins
+@import "mixins/grid";
+@import "mixins/stack";
+
 // Global styling of html elements
 @import "base";
-
-// Responsive containers and utilities
-@import "layout/container";
-@import "layout/grid";
-@import "layout/stack";
 
 // Components
 @import "components/card";
 @import "components/highlight";
 @import "components/main";
+
+// Layout
+@import "layout/container";
+@import "layout/grid";
+@import "layout/stack";

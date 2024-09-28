@@ -104,6 +104,10 @@ You can reference a footnote like this.
 
 `Inline code` has back-ticks around it.
 
+### `Inline code` in a header
+
+And here are some code fences...
+
 ```
 {
   "firstName": "John",

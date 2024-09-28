@@ -22,6 +22,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+// Block elements
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   margin-bottom: spacer(3); 
@@ -54,7 +56,7 @@ h6 {
   font-size: $font-size-h6;
 }
 
-p, ul, ol {
+p, ul, ol, figure {
   margin: 0;
   margin-bottom: spacer(3);
   font-family: $font-family-base;
@@ -82,6 +84,12 @@ li {
   }
 }
 
+figure img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
 blockquote {
   margin: 0;
   margin-bottom: spacer(3);
@@ -102,23 +110,63 @@ hr {
   border-top: solid 2px $border-color;
 }
 
-pre, code {
-  font-family: $font-family-mono;
-  font-size: 0.8rem;
-}
-
 pre {
   margin: 0;
   margin-bottom: spacer(3);
+  font-family: $font-family-mono;
+  font-size: 80%;
   // Prevent pre content from overflowing parent if it's a flex item
   overflow-x: auto;
   max-width: 0;
   min-width: -webkit-fill-available;
   min-width: -moz-available;
   min-width: stretch;
+  
 }
 
+// Inline elements
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: color .2s ease;
+  &:hover,
+  &:active {
+    color: shade-color($primary, 20%);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: tint-color($primary, 80%)
+  }
+}
+
+img {
+  border-style: none;
+}
+
+code {
+  font-family: $font-family-mono;
+  // Code elements without a pre parent
+  &:not(pre code) {
+    padding: 1px 3px;
+    background-color: tint-color($gray, 80%);
+    border-radius: $border-radius;
+    font-size: 80%;
+  }
+}
+
+strong, b {
+  font-weight: $font-weight-bold;
+}
+
+figcaption {
+  font-size: $font-size-sm;
+}
+
+// Tables
+
 table {
+  margin: 0;
+  margin-bottom: spacer(3);
   border-collapse: collapse;
   border-top: solid 2px $border-color;
 }
@@ -131,16 +179,5 @@ th, td {
 
 th {
   font-size: $font-size-sm;
-  font-weight: $font-weight-bold;
-}
-
-img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  border-style: none;
-}
-
-strong, b {
   font-weight: $font-weight-bold;
 }

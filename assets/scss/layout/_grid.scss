@@ -1,22 +1,14 @@
-%grid {
-  display: grid;
-  gap: spacer(3);
-}
-
 .grid {
-  @extend %grid;
+  @include make-grid();
 }
-
 @for $i from 2 through 12 {
   .grid-#{$i} {
-    @extend %grid;
-    grid-template-columns: repeat($i, 1fr);
+    @include make-grid-cols($i);
   }
-  @each $k, $v in $container-breakpoints {
+  @each $k, $v in $breakpoint-min-widths {
     .grid-#{$k}-#{$i} {
-      @extend %grid;
-      @media (min-width: container-breakpoint($k)) {
-        grid-template-columns: repeat($i, 1fr);
+      @media (min-width: breakpoint-min-width($k)) {
+        @include make-grid-cols($i);
       }
     }
   }

@@ -31,9 +31,14 @@
   @return map-get($elevation, $key);
 }
 
-// Return a container breakpoint value
-@function container-breakpoint($breakpoint) {
-  @return map-get($container-breakpoints, $breakpoint);
+// Return a breakpoint min-width value
+@function breakpoint-min-width($breakpoint) {
+  @return map-get($breakpoint-min-widths, $breakpoint);
+}
+
+// Return a breakpoint max-width value
+@function breakpoint-max-width($breakpoint) {
+  @return map-get($breakpoint-max-widths, $breakpoint);
 }
 
 // Return a container max-width value

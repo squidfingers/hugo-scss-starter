@@ -1,0 +1,5 @@
+goldmark:
+  parser:
+    wrapStandAloneImageWithinParagraph: false # Do not wrap standalone image within a paragraph element
+    attribute:
+      block: true # Enable Markdown attributes for block-level elements

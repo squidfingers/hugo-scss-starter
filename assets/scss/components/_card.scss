@@ -1,9 +1,14 @@
 .card {
-  @include make-stack(3);
-  padding: spacer(3);
   box-shadow: elevation(1);
   border-radius: $border-radius;
   border: solid 2px $border-color;
+
+  .card__body {
+    padding: spacer(3);
+  }
+  .card__content {
+    @include make-stack(3);
+  }
 
   // @options
 
