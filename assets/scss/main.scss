@@ -5,7 +5,7 @@
 @import "variables";
 
 // Mix-ins
-@import "mixins/grid";
+@import "mixins/button";
 @import "mixins/stack";
 
 // Global styling of html elements
@@ -13,10 +13,12 @@
 
 // Components
 @import "components/card";
+@import "components/button";
 @import "components/highlight";
-@import "components/main";
+
+// Application
+@import "app/main";
 
 // Layout
 @import "layout/container";
-@import "layout/grid";
 @import "layout/stack";

@@ -2,7 +2,7 @@
   <div class="container-xl">
     {{ .Content }}
     {{ with .Params.cards }}
-      <div class="grid grid-md-{{ . | len }}">
+      <div class="main__cards">
         {{ range . }}
           <div class="card card--primary">
             <div class="card__body">
@@ -14,6 +14,13 @@
               <div class="card__content">
                 {{ .content | $.Page.RenderString (dict "display" "block") }}
               </div>
+              {{ with .buttons }}
+                {{ range . }}
+                  <div class="card__footer">
+                    {{ partial "components/button" (dict "href" .href "text" .text "variant" "primary") }}
+                  </div>
+                {{ end }}
+              {{ end }}
             </div>
           </div>
         {{ end }}

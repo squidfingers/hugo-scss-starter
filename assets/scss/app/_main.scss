@@ -1,0 +1,12 @@
+.main {
+  padding: spacer(5) 0;
+
+  .main__cards {
+    display: grid;
+    gap: spacer(3);
+  
+    @media (min-width: breakpoint-min-width("md")) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

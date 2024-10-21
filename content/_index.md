@@ -4,6 +4,9 @@ params:
   cards:
     - title: card 1
       content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      buttons:
+        - text: Learn more
+          href: https://github.com
     - title: card 2
       content: Lorem ipsum dolor
     - title: card 3

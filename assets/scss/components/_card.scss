@@ -4,10 +4,23 @@
   border: solid 2px $border-color;
 
   .card__body {
+    display: flex;
+    flex-direction: column;
+    gap: spacer(3);
+    flex-grow: 1;
     padding: spacer(3);
+  }
+  .card__header {
+    @include make-stack(1);
   }
   .card__content {
     @include make-stack(3);
+    flex-grow: 1;
+  }
+  .card__footer {
+    display: flex;
+    flex-direction: row;
+    gap: spacer(3);
   }
 
   // @options
